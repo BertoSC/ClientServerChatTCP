@@ -6,21 +6,30 @@ The client must send the commands entered by the user to the server.
 
 The commands to be used are the following:
 
-NICK <name>. This command indicates that the user wants to use the given nickname.
-BCAST <msg>. The client sends a message to all other clients (broadcast).
-MSG <name> <msg>. The client sends a message to the client with nickname name.
-QUIT. The client informs the server that the user wants to leave.
+>NICK <name>. This command indicates that the user wants to use the given nickname.
+
+>BCAST <msg>. The client sends a message to all other clients (broadcast).
+
+>MSG <name> <msg>. The client sends a message to the client with nickname name.
+
+>QUIT. The client informs the server that the user wants to leave.
+
 The mesages from another users must begin with the nickname of the user followed by :. Example: maria: Hello World!
 
 The server manages the messages and informs the clients about the operations.
 
 The server responses are as follows:
 
-OK NICK. Indicates that the nick the client wants to use is valid. The server must inform the other clients about new connected clients.
-OK BCAST. Indicates that the broadcast operation was successful
-UNKNOWN. Indicates that the command does not exist in the communication protocol.
-ERROR. Indicates that the command exists in the communication protocol but its use is incorrect.
-BYE. Indicates that the communication with the client is going to be closed. The server must inform the other clients about disconnected clients.
+>OK NICK. Indicates that the nick the client wants to use is valid. The server must inform the other clients about new connected clients.
+
+>OK BCAST. Indicates that the broadcast operation was successful
+
+>UNKNOWN. Indicates that the command does not exist in the communication protocol.
+
+>ERROR. Indicates that the command exists in the communication protocol but its use is incorrect.
+
+>BYE. Indicates that the communication with the client is going to be closed. The server must inform the other clients about disconnected clients.
+
 Create a package called client for the client and a package called server for the server.
 
 Create a class ChatClient to launch the Client.
